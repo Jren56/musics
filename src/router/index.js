@@ -1,10 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '@/views/HomeView.vue'
-import About from '@/views/AboutView.vue'
-import Manage from '@/views/ManageView.vue'
-import Song from '@/views/SongView.vue'
 import useUserStore from '@/stores/user'
 //createWebHashHistory
+
+const Home = () => import('@/views/HomeView.vue')
+const About = () => import('@/views/AboutView.vue')
+const Manage = () => import('@/views/ManageView.vue')
+const Song = () => import('@/views/SongView.vue')
 
 const routes = [
   {
@@ -32,7 +33,7 @@ const routes = [
   },
   {
     path: '/manage',
-    redirect: { name: 'manage' },
+    redirect: { name: 'manage' }
   },
   {
     name: 'song',
